@@ -38,7 +38,7 @@ const inputOperator = (operator) => {
         prevNumber = currentNumber
     }
     calculationOperator = operator
-    currentNumber = ''
+    currentNumber = '0'
 }
 
 const equalSign = document.querySelector('.equal-sign')
@@ -46,6 +46,7 @@ const equalSign = document.querySelector('.equal-sign')
 equalSign.addEventListener('click', () => {
     calculate()
     updateScreen(currentNumber)
+    //console.log("Equal button is pressed");
 })
 
 const calculate = () => {
@@ -55,13 +56,13 @@ const calculate = () => {
             result = parseFloat(prevNumber) + parseFloat(currentNumber)
             break
         case "-":
-            result = parseInt(prevNumber) - parseInt(currentNumber)
+            result = parseFloat(prevNumber) - parseFloat(currentNumber)
             break
         case "*":
-            result = parseInt(prevNumber) * parseInt(currentNumber)
+            result = parseFloat(prevNumber) * parseFloat(currentNumber)
             break
         case "/":
-            result = parseInt(prevNumber) / parseInt(currentNumber)
+            result = parseFloat(prevNumber) / parseFloat(currentNumber)
             break
         default:
             break
